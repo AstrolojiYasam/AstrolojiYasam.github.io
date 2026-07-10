@@ -2,16 +2,13 @@
  <a href="yoga.html">Yoga</a> 
   
 
-
-
-             <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Astroloji Rehberi</title>
+    <title>Astroloji Rehberi - Burç Yorumları</title>
     <style>
-        /* RESET ve TEMEL */
         * {
             margin: 0;
             padding: 0;
@@ -19,200 +16,349 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f0f2f5;
+            background: #f5f7fa;
             color: #1c1c1e;
             padding: 16px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-
-        /* SOL ÜST MENÜ */
+        /* MENÜ - SOL ÜST */
         .menu {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px 12px;
+            gap: 6px 10px;
             background: white;
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             margin-bottom: 24px;
             align-items: center;
+        }
+        .menu .logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: #1c1c1e;
+            margin-right: 8px;
+        }
+        .menu span {
+            color: #8e8e93;
+            font-size: 14px;
+            margin: 0 4px;
         }
         .menu a {
             color: #007aff;
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
-            padding: 6px 14px;
-            border-radius: 30px;
+            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 20px;
             background: #f0f4ff;
             transition: 0.2s;
-            white-space: nowrap;
+            cursor: pointer;
+            border: none;
         }
         .menu a:hover {
             background: #dce6ff;
         }
-        .menu .logo {
-            font-weight: 700;
-            font-size: 18px;
-            color: #1c1c1e;
-            background: none;
-            padding-left: 0;
-        }
 
-        /* ANA İÇERİK */
-        .content {
-            flex: 1;
+        /* ANA KART */
+        .card {
             background: white;
             border-radius: 24px;
-            padding: 28px 20px;
+            padding: 24px 20px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            flex: 1;
             margin-bottom: 30px;
         }
-        .content h2 {
-            font-size: 26px;
-            margin-bottom: 12px;
-            color: #1c1c1e;
-        }
-        .content h3 {
-            font-size: 20px;
-            margin: 24px 0 8px;
-            color: #1c1c1e;
-        }
-        .content p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #3a3a3c;
-            margin-bottom: 12px;
-        }
-        .content ul {
-            padding-left: 20px;
+        .card h2 {
+            font-size: 24px;
             margin-bottom: 16px;
-        }
-        .content ul li {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #3a3a3c;
-            margin-bottom: 4px;
-        }
-        .kart {
-            background: #f8f9fc;
-            border-radius: 16px;
-            padding: 16px 18px;
-            margin: 16px 0;
-            border-left: 4px solid #007aff;
+            text-align: center;
         }
 
-        /* EN ALT İNDİRME BUTONU */
-        .footer-download {
+        /* BURÇ SEÇME BUTONLARI (GRID) */
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .zodiac-btn {
+            background: #f8f9fc;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 12px 6px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1c1c1e;
+            cursor: pointer;
+            transition: 0.2s;
             text-align: center;
-            padding: 20px 0 10px;
+        }
+        .zodiac-btn:active {
+            transform: scale(0.95);
+        }
+        .zodiac-btn.secilen {
+            border-color: #007aff;
+            background: #e8f0ff;
+            color: #007aff;
+        }
+
+        /* YORUM ALANI */
+        .yorum-alani {
+            background: #f8f9fc;
+            border-radius: 16px;
+            padding: 20px 16px;
+            min-height: 150px;
+            margin-top: 10px;
+            border-left: 4px solid #007aff;
+        }
+        .yorum-alani h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1c1c1e;
+        }
+        .yorum-alani p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #3a3a3c;
+            margin-bottom: 8px;
+        }
+        .yorum-alani .tarih {
+            font-size: 13px;
+            color: #8e8e93;
+        }
+
+        /* ALT İNDİRME BUTONU */
+        .footer {
+            text-align: center;
+            padding: 18px 0 8px;
             border-top: 2px solid #e5e5ea;
             margin-top: auto;
         }
         .indir-btn {
             background: #007aff;
             color: white;
-            padding: 14px 44px;
+            padding: 14px 40px;
             border-radius: 60px;
             text-decoration: none;
             display: inline-block;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            box-shadow: 0 4px 14px rgba(0,122,255,0.3);
+            box-shadow: 0 4px 14px rgba(0,122,255,0.25);
             transition: 0.15s;
-            border: none;
-            cursor: pointer;
         }
         .indir-btn:active {
             transform: scale(0.96);
             background: #005bbf;
         }
         .indir-alt {
-            font-size: 14px;
+            font-size: 13px;
             color: #8e8e93;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
-        /* MOBİL İYİLEŞTİRMELER */
-        @media (max-width: 600px) {
-            .menu {
-                padding: 12px 14px;
-                gap: 6px 8px;
+        @media (max-width: 480px) {
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
             }
-            .menu a {
-                font-size: 14px;
-                padding: 4px 12px;
-            }
-            .content {
-                padding: 20px 16px;
-            }
-            .indir-btn {
-                padding: 12px 32px;
-                font-size: 18px;
-                width: 100%;
-                max-width: 320px;
+            .zodiac-btn {
+                font-size: 13px;
+                padding: 10px 4px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- SOL ÜST MENÜ (Başlıklar) -->
-    <nav class="menu">
+    <!-- SOL ÜST MENÜ (Sadece yönlendirme başlıkları, hepsi bu sayfada çalışıyor) -->
+    <div class="menu">
         <span class="logo">✨ Astroloji</span>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="burclar.html">Burçlar</a>
-        <a href="yoga.html">Yoga</a>
-        <a href="gunluk.html">Günlük</a>
-        <a href="haftalik.html">Haftalık</a>
-        <a href="aylik.html">Aylık</a>
-        <a href="haberler.html">Haberler</a>
-        <a href="uyelik.html">Üyelik</a>
-    </nav>
-
-    <!-- ANA İÇERİK -->
-    <div class="content">
-        <h2>🔮 Hoş Geldiniz</h2>
-        <p>Astroloji rehberinizle burçların gizemli dünyasına adım atın. Günlük, haftalık ve aylık yorumlar, kişisel rehberlik ve daha fazlası burada.</p>
-
-        <div class="kart">
-            <h3>🌟 Günlük Burç Yorumu</h3>
-            <p>Bugün burcunuz sizi neler bekliyor? Aşk, kariyer ve sağlık alanında size özel mesajlar için <a href="gunluk.html">tıklayın</a>.</p>
-        </div>
-
-        <div class="kart">
-            <h3>📅 Haftalık &amp; Aylık Yorumlar</h3>
-            <p>Önümüzdeki hafta ve ay boyunca burcunuzun enerjisini keşfedin. Planlarınızı yıldızların rehberliğinde yapın.</p>
-            <ul>
-                <li><a href="haftalik.html">Haftalık Burç</a></li>
-                <li><a href="aylik.html">Aylık Burç</a></li>
-            </ul>
-        </div>
-
-        <div class="kart">
-            <h3>📰 Burç Haberleri</h3>
-            <p>Astroloji dünyasından son gelişmeler, gezegen hareketleri ve özel yorumlar için <a href="haberler.html">haberler sayfamızı</a> ziyaret edin.</p>
-        </div>
-
-        <div class="kart">
-            <h3>👤 Üyelik &amp; Kişisel Rehber</h3>
-            <p>Ücretsiz üye olarak size özel burç raporları, uyum analizleri ve daha fazlasından yararlanın. <a href="uyelik.html">Hemen kaydolun</a>.</p>
-        </div>
-
-        <p style="font-size:14px; color:#8e8e93; margin-top:20px;">Tüm içerikler uzman astrologlar tarafından hazırlanmaktadır.</p>
+        <span>|</span>
+        <a onclick="anasayfayaDon()">Ana Sayfa</a>
+        <a onclick="burcGoster('aslan')">Burçlar</a>
+        <a href="#yorumlar">Günlük</a>
+        <a href="#yorumlar">Haftalık</a>
+        <a href="#yorumlar">Aylık</a>
+        <a href="#yorumlar">Haberler</a>
+        <a href="#yorumlar">Üyelik</a>
     </div>
 
-    <!-- EN ALT İNDİRME BUTONU (APK) -->
-    <div class="footer-download">
+    <!-- ANA İÇERİK -->
+    <div class="card">
+        <h2>🔮 Burcunu Seç, Yorumunu Al</h2>
+
+        <!-- 12 BURÇ BUTONU -->
+        <div class="zodiac-grid" id="burcButonlari">
+            <button class="zodiac-btn" onclick="burcGoster('koc')">♈ Koç</button>
+            <button class="zodiac-btn" onclick="burcGoster('boga')">♉ Boğa</button>
+            <button class="zodiac-btn" onclick="burcGoster('ikizler')">♊ İkizler</button>
+            <button class="zodiac-btn" onclick="burcGoster('yengec')">♋ Yengeç</button>
+            <button class="zodiac-btn" onclick="burcGoster('aslan')">♌ Aslan</button>
+            <button class="zodiac-btn" onclick="burcGoster('basak')">♍ Başak</button>
+            <button class="zodiac-btn" onclick="burcGoster('terazi')">♎ Terazi</button>
+            <button class="zodiac-btn" onclick="burcGoster('akrep')">♏ Akrep</button>
+            <button class="zodiac-btn" onclick="burcGoster('yay')">♐ Yay</button>
+            <button class="zodiac-btn" onclick="burcGoster('oglak')">♑ Oğlak</button>
+            <button class="zodiac-btn" onclick="burcGoster('kova')">♒ Kova</button>
+            <button class="zodiac-btn" onclick="burcGoster('balik')">♓ Balık</button>
+        </div>
+
+        <!-- YORUM GÖSTERİM ALANI -->
+        <div class="yorum-alani" id="yorumAlani">
+            <h3>🌟 Merhaba!</h3>
+            <p>Yukarıdan burcunu seç, sana özel günlük, haftalık ve aylık yorumlar ile haberler burada görünsün.</p>
+            <p class="tarih">✨ Astroloji Rehberi</p>
+        </div>
+    </div>
+
+    <!-- EN ALT APK İNDİRME BUTONU -->
+    <div class="footer">
         <a href="https://raw.githubusercontent.com/astrolojiyasam/astrolojiyasam.github.io/main/astroloji.apk" 
            download="astroloji.apk" 
            class="indir-btn">
            📲 Android Uygulamasını İndir
         </a>
-        <p class="indir-alt">APK • 14 MB • Android 5.0 ve üzeri • Ücretsiz</p>
+        <p class="indir-alt">APK • 14 MB • Android 5.0+ • Ücretsiz</p>
     </div>
+
+    <script>
+        // BURÇ VERİTABANI (Örnek yorumlar - İstediğin gibi genişletebilirsin)
+        const burcVerileri = {
+            koc: {
+                isim: "Koç",
+                gunluk: "Bugün enerjiniz çok yüksek. İş hayatında yeni fırsatlar kapınızı çalabilir. Sevdiklerinizle vakit geçirmek size iyi gelecek.",
+                haftalık: "Bu hafta özgüveniniz artacak. Finansal konularda dikkatli olmalısınız. Salı günü önemli bir karar verebilirsiniz.",
+                aylık: "Bu ay kariyerinizde yükseliş var. Yeni başlangıçlar için ideal bir dönem. Sağlığınıza dikkat edin.",
+                haber: "Koç burcu bu ay Mars etkisiyle hareketli geçecek. Yeni projelere imza atabilirsiniz."
+            },
+            boga: {
+                isim: "Boğa",
+                gunluk: "Bugün duygusal dengeniz önemli. Sanatsal faaliyetler size iyi gelecek. Beklenmedik bir sürpriz yaşayabilirsiniz.",
+                haftalık: "Bu hafta ilişkilerinizde dengeyi yakalayacaksınız. Cuma günü sosyal etkinlikler ön planda.",
+                aylık: "Maddi konularda şanslı bir ay sizi bekliyor. Fakat harcamalarınızı kontrol altında tutun.",
+                haber: "Boğa burcu Venüs etkisiyle bu ay sanat ve aşk ön planda."
+            },
+            ikizler: {
+                isim: "İkizler",
+                gunluk: "İletişim yetenekleriniz bugün çok güçlü. Yeni insanlarla tanışmak için harika bir gün.",
+                haftalık: "Seyahat ve eğitim konularında şanslısınız. Perşembe günü önemli bir görüşme yapabilirsiniz.",
+                aylık: "Bu ay zihinsel olarak çok aktif olacaksınız. Yeni bilgiler öğrenmeye açık olun.",
+                haber: "İkizler burcu Merkür etkisiyle bu ay iletişimde çok başarılı."
+            },
+            yengec: {
+                isim: "Yengeç",
+                gunluk: "Ailenizle vakit geçirmek size huzur verecek. Duygularınızı ifade etmekten çekinmeyin.",
+                haftalık: "Bu hafta ev ve aile konuları ön planda. Pazar günü dinlenmeye zaman ayırın.",
+                aylık: "Duygusal tatmin arayışında olduğunuz bir ay. İç sesinizi dinleyin.",
+                haber: "Yengeç burcu Ay etkisiyle bu ay sezgileri çok kuvvetli."
+            },
+            aslan: {
+                isim: "Aslan",
+                gunluk: "Bugün liderlik vasıflarınız ön planda. İş yerinde takdir göreceksiniz. Eğlenceli bir akşam sizi bekliyor.",
+                haftalık: "Bu hafta sosyal hayatınız canlanacak. Çarşamba günü beklenmedik bir teklif alabilirsiniz.",
+                aylık: "Kariyer ve aşk hayatınızda parlak bir ay sizi bekliyor. Kendinize güvenin.",
+                haber: "Aslan burcu Güneş etkisiyle bu ay karizmanız dorukta."
+            },
+            basak: {
+                isim: "Başak",
+                gunluk: "Detaylara dikkat etmeniz gereken bir gün. Sağlığınızla ilgili olumlu gelişmeler var.",
+                haftalık: "Bu hafta işlerinizi planlamak için ideal. Perşembe günü verimli olacak.",
+                aylık: "Analiz yeteneğinizin güçlü olduğu bir ay. Eleştirilerden ders çıkarın.",
+                haber: "Başak burcu Merkür etkisiyle bu ay analitik zekası ön planda."
+            },
+            terazi: {
+                isim: "Terazi",
+                gunluk: "İlişkilerde dengeyi yakalayacağınız bir gün. Kararsız kaldığınız konularda içinize danışın.",
+                haftalık: "Bu hafta sanatsal aktiviteler size iyi gelecek. Pazar günü romantik bir sürpriz olabilir.",
+                aylık: "Ortaklıklar ve ikili ilişkiler ön planda. Adil olmaya özen gösterin.",
+                haber: "Terazi burcu Venüs etkisiyle bu ay sanat ve estetik ön planda."
+            },
+            akrep: {
+                isim: "Akrep",
+                gunluk: "Bugün gizemli ve çekici enerjinizle dikkat çekeceksiniz. Finansal konularda şanslısınız.",
+                haftalık: "Bu hafta araştırma ve keşfetmeye açık olun. Salı günü önemli bir sır öğrenebilirsiniz.",
+                aylık: "Dönüşüm ayı. Eski alışkanlıklarınızdan kurtulmak için ideal.",
+                haber: "Akrep burcu Plüton etkisiyle bu ay güçlü dönüşümler yaşayacak."
+            },
+            yay: {
+                isim: "Yay",
+                gunluk: "Macera ruhunuz bugün çok canlı. Yeni yerler keşfetmek isteyebilirsiniz.",
+                haftalık: "Bu hafta eğitim ve seyahat konuları ön planda. Çarşamba günü güzel haber alabilirsiniz.",
+                aylık: "Özgürlük ve keşif ayı. Fikirlerinizi açıkça ifade edin.",
+                haber: "Yay burcu Jüpiter etkisiyle bu ay şans ve bolluk dolu."
+            },
+            oglak: {
+                isim: "Oğlak",
+                gunluk: "Bugün disiplinli ve kararlı olmalısınız. Uzun vadeli hedeflerinize odaklanın.",
+                haftalık: "Kariyer basamaklarında yükselişe geçebilirsiniz. Cuma günü terfi haberi gelebilir.",
+                aylık: "Sorumluluklarınızın arttığı bir ay. Başarınız takdir edilecek.",
+                haber: "Oğlak burcu Satürn etkisiyle bu ay disiplin ön planda."
+            },
+            kova: {
+                isim: "Kova",
+                gunluk: "Bugün yaratıcı fikirlerle dolusunuz. Arkadaşlarınızla paylaşmak isteyeceksiniz.",
+                haftalık: "Bu hafta sosyal sorumluluk projelerine ilgi duyabilirsiniz. Perşembe günü yenilikler yapın.",
+                aylık: "Özgün fikirlerinizin konuşulduğu bir ay. Topluluk önünde konuşma fırsatı.",
+                haber: "Kova burcu Uranüs etkisiyle bu ay sıra dışı gelişmeler olabilir."
+            },
+            balik: {
+                isim: "Balık",
+                gunluk: "Bugün sezgileriniz çok kuvvetli. Sanatsal çalışmalara zaman ayırmak isteyebilirsiniz.",
+                haftalık: "Bu hafta duygusal derinlikleriniz ön planda. Pazar günü meditasyon yapabilirsiniz.",
+                aylık: "Hayal gücünüzün sınırlarını zorlayacağınız bir ay. Şiir, müzik ve sanatla ilgilenin.",
+                haber: "Balık burcu Neptün etkisiyle bu ay sezgi ve hayaller ön planda."
+            }
+        };
+
+        // Seçili burcu vurgulama
+        function burcGoster(burcKey) {
+            // Tüm butonlardan 'secilen' sınıfını kaldır
+            document.querySelectorAll('.zodiac-btn').forEach(btn => btn.classList.remove('secilen'));
+            
+            // Tıklanan butonu bul ve 'secilen' ekle
+            const butonlar = document.querySelectorAll('.zodiac-btn');
+            const burcIsimleri = ['koc','boga','ikizler','yengec','aslan','basak','terazi','akrep','yay','oglak','kova','balik'];
+            const index = burcIsimleri.indexOf(burcKey);
+            if (index !== -1) {
+                butonlar[index].classList.add('secilen');
+            }
+
+            // Veriyi al
+            const veri = burcVerileri[burcKey];
+            if (!veri) return;
+
+            // Yorum alanını doldur
+            const alan = document.getElementById('yorumAlani');
+            alan.innerHTML = `
+                <h3>♈ ${veri.isim} Burcu Yorumları</h3>
+                <p><strong>📅 Günlük:</strong> ${veri.gunluk}</p>
+                <p><strong>📆 Haftalık:</strong> ${veri.haftalik}</p>
+                <p><strong>📊 Aylık:</strong> ${veri.aylik}</p>
+                <p><strong>📰 Haber:</strong> ${veri.haber}</p>
+                <p class="tarih">✨ ${new Date().toLocaleDateString('tr-TR')} tarihli yorumlar</p>
+            `;
+        }
+
+        // Ana sayfaya dön (varsayılan mesaj)
+        function anasayfayaDon() {
+            const alan = document.getElementById('yorumAlani');
+            alan.innerHTML = `
+                <h3>🌟 Hoş Geldiniz!</h3>
+                <p>Yukarıdan burcunuzu seçerek size özel günlük, haftalık ve aylık yorumlar ile astroloji haberlerine ulaşabilirsiniz.</p>
+                <p class="tarih">✨ Burcunu seç, yıldızlar konuşsun!</p>
+            `;
+            // Tüm seçili sınıflarını kaldır
+            document.querySelectorAll('.zodiac-btn').forEach(btn => btn.classList.remove('secilen'));
+        }
+
+        // Sayfa yüklendiğinde Aslan burcunu otomatik göster (örnek)
+        window.onload = function() {
+            burcGoster('aslan');
+        };
+    </script>
 
 </body>
 </html>
