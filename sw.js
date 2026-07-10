@@ -2,8 +2,8 @@ const CACHE_NAME = 'astroloji-v1';
 const FILES = [
   '/index.html',
   '/manifest.json',
-  '/ikon-192.png',
-  '/ikon-512.png'
+  '/icon-192.png',
+  '/icon-512.png'
 ];
 
 self.addEventListener('install', e => {
