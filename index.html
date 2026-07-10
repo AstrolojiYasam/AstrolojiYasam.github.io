@@ -1,88 +1,127 @@
  <a href="burclar.html">Burçlar</a>
  <a href="yoga.html">Yoga</a> 
   
-  </body> 
-<!-- İNDİRME BUTONU (KÜÇÜK, ALT KISIMDA) -->
-<div style="text-align: center; margin: 20px 0 10px 0; padding: 0 16px;">
-    <a href="https://raw.githubusercontent.com/astrolojiyasam/astrolojiyasam.github.io/main/astroloji.apk" 
-       download="astroloji.apk" 
-       style="background: #007aff; 
-              color: white; 
-              padding: 10px 24px; 
-              border-radius: 30px; 
-              text-decoration: none; 
-              display: inline-block; 
-              font-weight: 500; 
-              font-size: 15px; 
-              box-shadow: 0 2px 8px rgba(0,122,255,0.2);">
-       📲 Android Uygulamasını İndir
-    </a>
-    <p style="font-size: 12px; color: #888; margin-top: 6px;">APK • 14 MB • Android 5.0+</p>
-</div>
-
-</body>
 
 
-<!DOCTYPE html>
+
+             <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Astroloji Uygulaması</title>
+    <title>Astroloji Rehberi</title>
     <style>
+        /* RESET ve TEMEL */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            background: #f5f7fa;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 16px;
-            margin: 0;
-        }
-        .container {
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 30px 24px 40px;
-            max-width: 420px;
-            width: 100%;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-        .icon {
-            font-size: 72px;
-            margin-bottom: 8px;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
+            background: #f0f2f5;
             color: #1c1c1e;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
+            padding: 16px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        .sub {
+
+        /* SOL ÜST MENÜ */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            background: white;
+            padding: 14px 18px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 24px;
+            align-items: center;
+        }
+        .menu a {
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background: #f0f4ff;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .menu a:hover {
+            background: #dce6ff;
+        }
+        .menu .logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: #1c1c1e;
+            background: none;
+            padding-left: 0;
+        }
+
+        /* ANA İÇERİK */
+        .content {
+            flex: 1;
+            background: white;
+            border-radius: 24px;
+            padding: 28px 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+        .content h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #1c1c1e;
+        }
+        .content h3 {
+            font-size: 20px;
+            margin: 24px 0 8px;
+            color: #1c1c1e;
+        }
+        .content p {
             font-size: 16px;
-            color: #6c6c70;
-            margin-bottom: 28px;
-            line-height: 1.4;
+            line-height: 1.6;
+            color: #3a3a3c;
+            margin-bottom: 12px;
+        }
+        .content ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .content ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #3a3a3c;
+            margin-bottom: 4px;
+        }
+        .kart {
+            background: #f8f9fc;
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin: 16px 0;
+            border-left: 4px solid #007aff;
+        }
+
+        /* EN ALT İNDİRME BUTONU */
+        .footer-download {
+            text-align: center;
+            padding: 20px 0 10px;
+            border-top: 2px solid #e5e5ea;
+            margin-top: auto;
         }
         .indir-btn {
-            display: inline-block;
             background: #007aff;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: 600;
-            padding: 16px 48px;
+            color: white;
+            padding: 14px 44px;
             border-radius: 60px;
             text-decoration: none;
-            transition: all 0.15s ease;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
-            letter-spacing: 0.3px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(0,122,255,0.3);
+            transition: 0.15s;
             border: none;
             cursor: pointer;
         }
@@ -90,68 +129,90 @@
             transform: scale(0.96);
             background: #005bbf;
         }
-        .meta {
-            margin-top: 24px;
+        .indir-alt {
             font-size: 14px;
             color: #8e8e93;
-            border-top: 1px solid #e5e5ea;
-            padding-top: 20px;
+            margin-top: 10px;
         }
-        .meta span {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .uyari {
-            background: #fff3cd;
-            color: #856404;
-            padding: 10px 14px;
-            border-radius: 14px;
-            font-size: 14px;
-            margin: 20px 0 10px;
-            border-left: 4px solid #ffc107;
-            text-align: left;
-        }
-        /* Mobil ekstra ince ayar */
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 16px 32px;
+
+        /* MOBİL İYİLEŞTİRMELER */
+        @media (max-width: 600px) {
+            .menu {
+                padding: 12px 14px;
+                gap: 6px 8px;
+            }
+            .menu a {
+                font-size: 14px;
+                padding: 4px 12px;
+            }
+            .content {
+                padding: 20px 16px;
             }
             .indir-btn {
-                padding: 14px 32px;
+                padding: 12px 32px;
                 font-size: 18px;
                 width: 100%;
-            }
-            .icon {
-                font-size: 60px;
-            }
-            h1 {
-                font-size: 24px;
+                max-width: 320px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">✨</div>
-        <h1>Astroloji</h1>
-        <p class="sub">Günlük burç yorumları, aşk uyumu, kişisel rehber</p>
 
-        <!-- İNDİR BUTONU -->
+    <!-- SOL ÜST MENÜ (Başlıklar) -->
+    <nav class="menu">
+        <span class="logo">✨ Astroloji</span>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="burclar.html">Burçlar</a>
+        <a href="yoga.html">Yoga</a>
+        <a href="gunluk.html">Günlük</a>
+        <a href="haftalik.html">Haftalık</a>
+        <a href="aylik.html">Aylık</a>
+        <a href="haberler.html">Haberler</a>
+        <a href="uyelik.html">Üyelik</a>
+    </nav>
+
+    <!-- ANA İÇERİK -->
+    <div class="content">
+        <h2>🔮 Hoş Geldiniz</h2>
+        <p>Astroloji rehberinizle burçların gizemli dünyasına adım atın. Günlük, haftalık ve aylık yorumlar, kişisel rehberlik ve daha fazlası burada.</p>
+
+        <div class="kart">
+            <h3>🌟 Günlük Burç Yorumu</h3>
+            <p>Bugün burcunuz sizi neler bekliyor? Aşk, kariyer ve sağlık alanında size özel mesajlar için <a href="gunluk.html">tıklayın</a>.</p>
+        </div>
+
+        <div class="kart">
+            <h3>📅 Haftalık &amp; Aylık Yorumlar</h3>
+            <p>Önümüzdeki hafta ve ay boyunca burcunuzun enerjisini keşfedin. Planlarınızı yıldızların rehberliğinde yapın.</p>
+            <ul>
+                <li><a href="haftalik.html">Haftalık Burç</a></li>
+                <li><a href="aylik.html">Aylık Burç</a></li>
+            </ul>
+        </div>
+
+        <div class="kart">
+            <h3>📰 Burç Haberleri</h3>
+            <p>Astroloji dünyasından son gelişmeler, gezegen hareketleri ve özel yorumlar için <a href="haberler.html">haberler sayfamızı</a> ziyaret edin.</p>
+        </div>
+
+        <div class="kart">
+            <h3>👤 Üyelik &amp; Kişisel Rehber</h3>
+            <p>Ücretsiz üye olarak size özel burç raporları, uyum analizleri ve daha fazlasından yararlanın. <a href="uyelik.html">Hemen kaydolun</a>.</p>
+        </div>
+
+        <p style="font-size:14px; color:#8e8e93; margin-top:20px;">Tüm içerikler uzman astrologlar tarafından hazırlanmaktadır.</p>
+    </div>
+
+    <!-- EN ALT İNDİRME BUTONU (APK) -->
+    <div class="footer-download">
         <a href="https://raw.githubusercontent.com/astrolojiyasam/astrolojiyasam.github.io/main/astroloji.apk" 
            download="astroloji.apk" 
            class="indir-btn">
-           📲 İndir
+           📲 Android Uygulamasını İndir
         </a>
-
-        <div class="meta">
-            <span>📦 14 MB</span>
-            <span>🤖 Android 5.0+</span>
-        </div>
-
-        <div class="uyari">
-            ⚠️ İndirdikten sonra dosyaya tıklayarak kuruluma başlayın.<br>
-            Telefonunuz "Bilinmeyen kaynak" iznini açmanızı isteyebilir.
-        </div>
+        <p class="indir-alt">APK • 14 MB • Android 5.0 ve üzeri • Ücretsiz</p>
     </div>
+
 </body>
 </html>
