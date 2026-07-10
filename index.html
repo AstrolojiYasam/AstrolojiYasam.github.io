@@ -1,5 +1,137 @@
  <a href="burclar.html">Burçlar</a>
  <a href="yoga.html">Yoga</a>
+
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Astroloji</title>
+    
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b0b1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0b0b1a;
+            color: #eaeaff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: #18182a;
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 1px solid #2d2d4a;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #a78bfa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #b0b0d0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #2d2d4a;
+            padding-bottom: 20px;
+        }
+        .card {
+            background: #121225;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #a78bfa;
+            text-align: left;
+        }
+        .card h3 {
+            color: #a78bfa;
+            margin-bottom: 8px;
+        }
+        .card p {
+            color: #c0c0e0;
+            line-height: 1.6;
+        }
+        .install-btn {
+            background: #a78bfa;
+            color: #000;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 30px 0 10px;
+            box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+            transition: 0.3s;
+            width: 100%;
+            max-width: 350px;
+        }
+        .install-btn:hover {
+            transform: scale(1.05);
+            background: #34d399;
+        }
+        .footer {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 20px;
+        }
+        .emoji-big {
+            font-size: 4rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="emoji-big">🌟</div>
+    <h1>Astroloji</h1>
+    <div class="subtitle">Yıldızların dilini keşfet</div>
+
+    <div class="card">
+        <h3>🔮 Bugünün Burç Yorumu</h3>
+        <p>Yıldızlar bugün cesur adımlar atman için seni destekliyor. İç sesini dinle ve kalbinin sesine kulak ver.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌙 Ay Evresi</h3>
+        <p>Dolunay etkisiyle duyguların daha yoğun. Kendine zaman ayır ve meditasyon yap.</p>
+    </div>
+
+    <div class="card">
+        <h3>🧘 Önerilen Meditasyon</h3>
+        <p>Nefes odaklı 5 dakikalık bir meditasyon ile zihnini arındır.</p>
+    </div>
+
+    <!-- PWA KURULUM BUTONU -->
+    <button id="installBtn" class="install-btn">📲 Uygulamayı Yükle</button>
+    <p style="font-size:0.75rem; color:#666; margin-top:5px;">Android • iOS • Windows • Mac</p>
+
+    <div class="footer">
+        ⚡ Tüm hakları saklıdır.
+    </div>
+</div>
+
 <script>
     let deferredPrompt;
 
@@ -21,15 +153,16 @@
             }
             deferredPrompt = null;
         } else {
-            // Eğer beforeinstallprompt çalışmadıysa, manuel ekleme talimatı ver.
             alert('📱 Lütfen Chrome menüsünden "Ana ekrana ekle" seçeneğini kullanın.\n\nAdımlar:\n1. Sağ üstteki 3 noktaya tıkla\n2. "Ana ekrana ekle" seçeneğini bul\n3. "Ekle" de');
         }
     });
 
+    // Eğer zaten uygulama olarak açıldıysa butonu gizle
     if (window.matchMedia('(display-mode: standalone)').matches) {
         document.getElementById('installBtn').style.display = 'none';
     }
 
+    // Service Worker'ı kaydet
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
             .then(() => console.log('✅ Service Worker kaydedildi.'))
@@ -37,3 +170,5 @@
     }
 </script>
 
+</body>
+</html>
