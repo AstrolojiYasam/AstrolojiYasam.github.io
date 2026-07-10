@@ -3,10 +3,10 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Astroloji Uygulaması</title>
     <style>
         * {
@@ -15,250 +15,122 @@
             box-sizing: border-box;
         }
         body {
-            background: #f0f2f5;
-            font-family: -apple-system, sans-serif;
+            background: #f5f7fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 16px;
+            margin: 0;
         }
-        .card {
-            background: white;
-            border-radius: 32px;
-            padding: 40px 30px;
-            max-width: 380px;
+        .container {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 24px 40px;
+            max-width: 420px;
             width: 100%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             text-align: center;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
         .icon {
             font-size: 72px;
-            margin-bottom: 12px;
-        }
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            color: #1c1c1e;
-            margin-bottom: 6px;
-        }
-        .sub {
-            font-size: 15px;
-            color: #8e8e93;
-            margin-bottom: 24px;
-        }
-        .btn {
-            display: inline-block;
-            background: #007aff;
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 14px 40px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: 0.2s;
-            letter-spacing: 0.3px;
-        }
-        .btn:hover {
-            background: #005bbf;
-            transform: scale(1.01);
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #8e8e93;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="icon">✨</div>
-        <h1>Astroloji</h1>
-        <p class="sub">Günlük burç yorumları · Uyum analizi · Ruh hali</p>
-        <a href="https://raw.githubusercontent.com/astrolojiyasam/astrolojiyasam.github.io/main/astroloji.apk" 
-           download="astroloji.apk" 
-           class="btn">📲 İndir</a>
-        <p class="meta">APK • 14 MB • Android 5.0 ve üzeri</p>
-    </div>
-</body>
-</html>
-
-
-
-
-
-
- <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Astroloji</title>
-    
-    <!-- PWA Meta -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0b0b1a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="icon-192.png">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #0b0b1a;
-            color: #eaeaff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 700px;
-            width: 100%;
-            background: #18182a;
-            padding: 40px 30px;
-            border-radius: 30px;
-            border: 1px solid #2d2d4a;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.8rem;
-            background: linear-gradient(135deg, #a78bfa, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #b0b0d0;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #2d2d4a;
-            padding-bottom: 20px;
-        }
-        .card {
-            background: #121225;
-            padding: 20px;
-            border-radius: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #a78bfa;
-            text-align: left;
-        }
-        .card h3 {
-            color: #a78bfa;
             margin-bottom: 8px;
         }
-        .card p {
-            color: #c0c0e0;
-            line-height: 1.6;
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
         }
-        .install-btn {
-            background: #a78bfa;
-            color: #000;
+        .sub {
+            font-size: 16px;
+            color: #6c6c70;
+            margin-bottom: 28px;
+            line-height: 1.4;
+        }
+        .indir-btn {
+            display: inline-block;
+            background: #007aff;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 16px 48px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
+            letter-spacing: 0.3px;
             border: none;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
             cursor: pointer;
-            margin: 30px 0 10px;
-            box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
-            transition: 0.3s;
-            width: 100%;
-            max-width: 350px;
         }
-        .install-btn:hover {
-            transform: scale(1.05);
-            background: #34d399;
+        .indir-btn:active {
+            transform: scale(0.96);
+            background: #005bbf;
         }
-        .footer {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 20px;
+        .meta {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #8e8e93;
+            border-top: 1px solid #e5e5ea;
+            padding-top: 20px;
         }
-        .emoji-big {
-            font-size: 4rem;
-            margin: 10px 0;
+        .meta span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .uyari {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 14px;
+            margin: 20px 0 10px;
+            border-left: 4px solid #ffc107;
+            text-align: left;
+        }
+        /* Mobil ekstra ince ayar */
+        @media (max-width: 480px) {
+            .container {
+                padding: 24px 16px 32px;
+            }
+            .indir-btn {
+                padding: 14px 32px;
+                font-size: 18px;
+                width: 100%;
+            }
+            .icon {
+                font-size: 60px;
+            }
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="icon">✨</div>
+        <h1>Astroloji</h1>
+        <p class="sub">Günlük burç yorumları, aşk uyumu, kişisel rehber</p>
 
-<div class="container">
-    <div class="emoji-big">🌟</div>
-    <h1>Astroloji</h1>
-    <div class="subtitle">Yıldızların dilini keşfet</div>
+        <!-- İNDİR BUTONU -->
+        <a href="https://raw.githubusercontent.com/astrolojiyasam/astrolojiyasam.github.io/main/astroloji.apk" 
+           download="astroloji.apk" 
+           class="indir-btn">
+           📲 İndir
+        </a>
 
-    <div class="card">
-        <h3>🔮 Bugünün Burç Yorumu</h3>
-        <p>Yıldızlar bugün cesur adımlar atman için seni destekliyor. İç sesini dinle ve kalbinin sesine kulak ver.</p>
+        <div class="meta">
+            <span>📦 14 MB</span>
+            <span>🤖 Android 5.0+</span>
+        </div>
+
+        <div class="uyari">
+            ⚠️ İndirdikten sonra dosyaya tıklayarak kuruluma başlayın.<br>
+            Telefonunuz "Bilinmeyen kaynak" iznini açmanızı isteyebilir.
+        </div>
     </div>
-
-    <div class="card">
-        <h3>🌙 Ay Evresi</h3>
-        <p>Dolunay etkisiyle duyguların daha yoğun. Kendine zaman ayır ve meditasyon yap.</p>
-    </div>
-
-    <div class="card">
-        <h3>🧘 Önerilen Meditasyon</h3>
-        <p>Nefes odaklı 5 dakikalık bir meditasyon ile zihnini arındır.</p>
-    </div>
-
-    <!-- PWA KURULUM BUTONU -->
-    <button id="installBtn" class="install-btn">📲 Uygulamayı Yükle</button>
-    <p style="font-size:0.75rem; color:#666; margin-top:5px;">Android • iOS • Windows • Mac</p>
-
-    <div class="footer">
-        ⚡ Tüm hakları saklıdır.
-    </div>
-</div>
-
-<script>
-    let deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        document.getElementById('installBtn').style.display = 'block';
-        console.log('✅ Kurulum butonu aktif.');
-    });
-
-    document.getElementById('installBtn').addEventListener('click', async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const result = await deferredPrompt.userChoice;
-            if (result.outcome === 'accepted') {
-                alert('🎉 Uygulama başarıyla eklendi! Ana ekranda bulabilirsin.');
-            } else {
-                alert('Kurulum iptal edildi.');
-            }
-            deferredPrompt = null;
-        } else {
-            alert('📱 Lütfen Chrome menüsünden "Ana ekrana ekle" seçeneğini kullanın.\n\nAdımlar:\n1. Sağ üstteki 3 noktaya tıkla\n2. "Ana ekrana ekle" seçeneğini bul\n3. "Ekle" de');
-        }
-    });
-
-    // Eğer zaten uygulama olarak açıldıysa butonu gizle
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        document.getElementById('installBtn').style.display = 'none';
-    }
-
-    // Service Worker'ı kaydet
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('✅ Service Worker kaydedildi.'))
-            .catch((err) => console.log('⚠️ Service Worker hatası:', err));
-    }
-</script>
-
 </body>
 </html>
-
-
-
