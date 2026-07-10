@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎧 Profesyonel Yoga & Meditasyon</title>
+<style>
+  :root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --accent-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --error-color: #cf6679;
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background-color: var(--card-bg);
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  h1 { color: var(--accent-color); margin-bottom: 20px; }
+  .btn {
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px;
+  }
+  .btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
+  .content-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+  }
+  .hidden-field { display: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🌿 Mutina's Tube - Piazza</h1>
+  <p>Rehberli sesli meditasyon ve yoga pratikleri.</p>
+
+  <div>
+    <button class="btn" onclick="playAudio('sabah')">🌅 Sabah Meditasyonu</button>
+    <button class="btn" onclick="playAudio('gece')">🌙 Gece Meditasyonu</button>
+    <button class="btn" onclick="playAudio('yoga')">🧘‍♀️ Yoga Nidra</button>
+    <button class="btn" onclick="playAudio('nefes')">🌬️ Nefes Rehberi</button>
+  </div>
+
+  <div class="content-box">
+    <div id="displayEmoji" style="font-size:3rem;">🎧</div>
+    <div id="displayText">Bir butona tıkla, sesli rehberi dinle.</div>
+  </div>
+
+  <div class="content-box">
+    <h3>💬 Yorum Yap</h3>
+    <form id="commentForm">
+      <input type="text" placeholder="Adınız *" required>
+      <input type="text" placeholder="Soyadınız *" required>
+      <input type="text" placeholder="Şehir (İsteğe bağlı)">
+      <input type="email" placeholder="E-posta Adresiniz (Gizli) *" required>
+      <input type="text" class="hidden-field" id="ipAddress" value="Gizli IP">
+      <textarea placeholder="Yorumunuzu yazın..." rows="4" required></textarea>
+      <button class="btn" type="submit">Yorumu Gönder</button>
+    </form>
+  </div>
+
+  <div class="content-box">
+    <h3>❓ Soru Sor</h3>
+    <form id="questionForm">
+      <input type="text" placeholder="Adınız *" required>
+      <input type="text" placeholder="Soyadınız *" required>
+      <textarea placeholder="Sorunuzu yazın..." rows="3" required></textarea>
+      <button class="btn" type="submit">Soruyu Gönder</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  function playAudio(type) {
+    const texts = {
+      sabah: "🌅 Sabah Meditasyonu: Güne başlarken 5 dakika boyunca derin nefes al...",
+      gece: "🌙 Gece Meditasyonu: Günün yorgunluğunu bırak...",
+      yoga: "🧘‍♀️ Yoga Nidra Rehberi: Sırt üstü yat...",
+      nefes: "🌬️ Nefes Rehberi: 4-7-8 tekniği..."
+    };
+    document.getElementById('displayText').innerHTML = texts[type].replace(/\n/g, '<br>');
+  }
+
+  document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Yorumunuz ve verileriniz iletilmiştir.");
+  });
+  
+  document.getElementById('questionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Sorunuz ve kişisel bilgileriniz iletilmiştir.");
+  });
+</script>
+
+</body>
+</html>
+
